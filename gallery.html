@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — The Hilltop Sauna</title>
+  <meta name="description" content="A look around The Hilltop Sauna — the sauna, the ice bath, the hot tub, and the view over Belfast from Cavehill.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Schibsted+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <path d="M4 26L14 8l4 7 4-5 6 16H4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          <circle cx="18" cy="6" r="2" fill="#D9714A"/>
+        </svg>
+        The Hilltop Sauna
+      </a>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="nav__links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html" aria-current="page">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <span class="nav__cta"><a href="booking.html" class="btn btn--primary">Book Now</a></span>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ PAGE HERO ============ -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">A look inside</span>
+        <h1 class="page-hero__title">Gallery</h1>
+        <p>The sauna, the ice bath, the hot tub, and the view over Belfast that makes the walk up the hill worth it. Tap any image to take a closer look.</p>
+      </div>
+    </section>
+
+    <!-- ============ GALLERY GRID ============ -->
+    <section class="section section--char" style="padding-top:0;">
+      <div class="container">
+        <div class="gallery-grid">
+          <button type="button" class="gallery__item">
+            <img src="website photos/IMG_7313.jpeg" alt="Inside the sauna, looking out over Belfast">
+            <span class="gallery__caption">Inside the sauna, looking out over Belfast</span>
+          </button>
+          <button type="button" class="gallery__item">
+            <img src="website photos/View recent photos.png" alt="The ice baths, ready and waiting">
+            <span class="gallery__caption">The ice baths, ready and waiting</span>
+          </button>
+          <button type="button" class="gallery__item">
+            <img src="website photos/IMG_7298.jpeg" alt="The sauna after dark">
+            <span class="gallery__caption">The sauna after dark</span>
+          </button>
+          <button type="button" class="gallery__item">
+            <img src="website photos/IMG_7309.jpeg" alt="Sunset from the deck">
+            <span class="gallery__caption">Sunset from the deck</span>
+          </button>
+          <button type="button" class="gallery__item">
+            <img src="website photos/395830bb-033e-4cf1-a3d5-45dff27dcffe.JPG" alt="Welcome to the hill">
+            <span class="gallery__caption">Welcome to the hill</span>
+          </button>
+          <button type="button" class="gallery__item">
+            <img src="website photos/IMG_4274.jpeg" alt="Belfast skyline from Cavehill">
+            <span class="gallery__caption">Belfast skyline from Cavehill</span>
+          </button>
+          <button type="button" class="gallery__item">
+            <img src="website photos/IMG_6994.jpeg" alt="Arrive on the hill">
+            <span class="gallery__caption">Arrive on the hill</span>
+          </button>
+          <button type="button" class="gallery__item">
+            <img src="website photos/IMG_7299.jpeg" alt="Evening light on the hill">
+            <span class="gallery__caption">Evening light on the hill</span>
+          </button>
+          <button type="button" class="gallery__item">
+            <div class="ph ph--9"><span class="gallery__caption">More to come</span></div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section section--light">
+      <div class="container cta-band">
+        <span class="eyebrow">Like what you see</span>
+        <h2>Come and experience it in person</h2>
+        <p>Pictures only get you so far. Book a session and feel the contrast for yourself.</p>
+        <div class="hero__actions">
+          <a href="booking.html" class="btn btn--primary">Book a session</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox">
+    <div class="lightbox__panel">
+      <div class="lightbox__media ph"></div>
+      <div class="lightbox__body">
+        <span class="lightbox__caption"></span>
+        <button type="button" class="lightbox__close" aria-label="Close image">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="ridge-divider">
+        <svg viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="footerRidge" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#D9714A"/>
+              <stop offset="1" stop-color="#8FB4C0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0,30 C150,10 300,35 450,20 C600,5 750,30 900,15 C1050,5 1150,25 1200,18" fill="none" stroke="url(#footerRidge)" stroke-width="2" opacity="0.6"/>
+        </svg>
+      </div>
+
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">
+            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <path d="M4 26L14 8l4 7 4-5 6 16H4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <circle cx="18" cy="6" r="2" fill="#D9714A"/>
+            </svg>
+            The Hilltop Sauna
+          </div>
+          <p>Sauna, ice bath, hot tub, and an outdoor wild shower on the edge of Cavehill — with landscape views over Belfast. Open air, all year.</p>
+        </div>
+
+        <div>
+          <h4>Explore</h4>
+          <div class="footer__links">
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="booking.html">Booking</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Visit</h4>
+          <div class="footer__links">
+            <span>33 Upper Hightown Road</span>
+            <span>Newtownabbey, BT14 8RR</span>
+            <a href="contact.html">Get directions</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Reviews</h4>
+          <div class="footer__links">
+            <span class="rating-badge"><strong>★ 5.0</strong> · 27 reviews</span>
+            <a href="https://booksy.com/en-gb/182090_thehilltopsauna_wellness-day-spa_1511561_belfast" target="_blank" rel="noopener">View on Booksy</a>
+            <a href="booking.html">Book a session</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© 2026 The Hilltop Sauna. All rights reserved.</span>
+        <span><a href="contact.html">Contact</a> · <a href="booking.html">Book a session</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

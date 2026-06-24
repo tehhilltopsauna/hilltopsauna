@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sips -r 270 IMG_6994.jpeg IMG_7298.jpeg IMG_7309.jpeg IMG_7313.jpeg)",
+      "Bash(sips -r 180 IMG_6994.jpeg IMG_7298.jpeg IMG_7309.jpeg IMG_7313.jpeg)",
+      "Bash(php --version)",
+      "Bash(ruby --version)",
+      "mcp__Claude_Preview__preview_start",
+      "mcp__Claude_in_Chrome__navigate",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "WebFetch(domain:www.thehilltopsauna.co.uk)",
+      "WebFetch(domain:thehilltopsauna.co.uk)",
+      "Bash(curl -I --max-time 10 https://thehilltopsauna.co.uk)",
+      "Bash(curl -sI --max-time 10 -k https://thehilltopsauna.co.uk)",
+      "Bash(curl -sI --max-time 10 http://thehilltopsauna.co.uk)",
+      "Bash(curl -sI --max-time 10 -k https://www.thehilltopsauna.co.uk)",
+      "Bash(curl -s --max-time 10 -k https://www.thehilltopsauna.co.uk)",
+      "Bash(curl -s --max-time 10 -k https://www.thehilltopsauna.co.uk/booking.html)",
+      "Bash(git --version)",
+      "Bash(gh repo *)",
+      "Bash(git init *)",
+      "Bash(git remote *)",
+      "Bash(git fetch *)",
+      "Bash(git checkout *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ]
+  }
+}

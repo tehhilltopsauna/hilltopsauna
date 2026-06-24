@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Session — The Hilltop Sauna</title>
+  <meta name="description" content="Book your sauna, ice bath, hot tub and outdoor shower session at The Hilltop Sauna on Cavehill, Belfast. Choose shared or private, then pick a time online.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Schibsted+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <path d="M4 26L14 8l4 7 4-5 6 16H4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          <circle cx="18" cy="6" r="2" fill="#D9714A"/>
+        </svg>
+        The Hilltop Sauna
+      </a>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="nav__links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <span class="nav__cta"><a href="booking.html" class="btn btn--primary">Book Now</a></span>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ PAGE HERO ============ -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Book your session</span>
+        <h1 class="page-hero__title">Reserve your spot on the hill</h1>
+        <p>Choose a shared or private sauna session below and pick a time that suits — sauna, ice bath, hot tub, and outdoor shower are included with every booking.</p>
+      </div>
+    </section>
+
+    <!-- ============ BOOKING WIDGET ============ -->
+    <section class="section section--char" style="padding-top:0;">
+      <div class="container">
+
+        <div class="booking-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
+          <p>Availability, session lengths, and confirmations are all handled through our online booking calendar below. Select Shared or Private, then choose a date and time that works for you.</p>
+        </div>
+
+        <!--
+          ACUITY SCHEDULING EMBED
+          Replace OWNER_ID below with your real Acuity owner ID (found in
+          Acuity under Integrations → Embed on Your Site). You can also pass
+          an "appointmentType" parameter to jump straight to a specific
+          session, e.g.
+          ?owner=OWNER_ID&appointmentType=12345678
+        -->
+        <div class="acuity-embed">
+          <iframe src="https://app.acuityscheduling.com/schedule.php?owner=39554985" title="Book a session — Acuity Scheduling" width="100%" height="800" frameborder="0"></iframe>
+        </div>
+        <script src="https://embed.acuityscheduling.com/js/embed.js" type="text/javascript"></script>
+
+      </div>
+    </section>
+
+    <!-- ============ GOOD TO KNOW ============ -->
+    <section class="section section--light">
+      <div class="container">
+        <div class="section__head section__head--center">
+          <span class="eyebrow">Before you arrive</span>
+          <h2>Good to know</h2>
+        </div>
+
+        <div class="cards-grid">
+          <div class="card" style="background:#fff; border-color:#E2D8C9;">
+            <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:#D9714A"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h3"/></svg>
+            <h3 style="color:#2B241D">What to bring</h3>
+            <p style="color:#6B5E4F">Swimwear, a towel, and footwear you don't mind getting wet between facilities.</p>
+          </div>
+          <div class="card" style="background:#fff; border-color:#E2D8C9;">
+            <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:#8FB4C0"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <h3 style="color:#2B241D">Where to find us</h3>
+            <p style="color:#6B5E4F">33 Upper Hightown Road, Newtownabbey, BT14 8RR — on the edge of Cave Hill Country Park. <a href="contact.html" style="color:var(--ember)">Get directions</a>.</p>
+          </div>
+          <div class="card" style="background:#fff; border-color:#E2D8C9;">
+            <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:#8B9574"><path d="M4 12l5 5L20 6"/></svg>
+            <h3 style="color:#2B241D">Confirmation</h3>
+            <p style="color:#6B5E4F">You'll receive a confirmation as soon as your booking is made. Questions before then? <a href="contact.html" style="color:var(--ember)">Get in touch</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="ridge-divider">
+        <svg viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="footerRidge" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#D9714A"/>
+              <stop offset="1" stop-color="#8FB4C0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0,30 C150,10 300,35 450,20 C600,5 750,30 900,15 C1050,5 1150,25 1200,18" fill="none" stroke="url(#footerRidge)" stroke-width="2" opacity="0.6"/>
+        </svg>
+      </div>
+
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">
+            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <path d="M4 26L14 8l4 7 4-5 6 16H4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <circle cx="18" cy="6" r="2" fill="#D9714A"/>
+            </svg>
+            The Hilltop Sauna
+          </div>
+          <p>Sauna, ice bath, hot tub, and an outdoor wild shower on the edge of Cavehill — with landscape views over Belfast. Open air, all year.</p>
+        </div>
+
+        <div>
+          <h4>Explore</h4>
+          <div class="footer__links">
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="booking.html">Booking</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Visit</h4>
+          <div class="footer__links">
+            <span>33 Upper Hightown Road</span>
+            <span>Newtownabbey, BT14 8RR</span>
+            <a href="contact.html">Get directions</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Reviews</h4>
+          <div class="footer__links">
+            <span class="rating-badge"><strong>★ 5.0</strong> · 27 reviews</span>
+            <a href="https://booksy.com/en-gb/182090_thehilltopsauna_wellness-day-spa_1511561_belfast" target="_blank" rel="noopener">View on Booksy</a>
+            <a href="booking.html">Book a session</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© 2026 The Hilltop Sauna. All rights reserved.</span>
+        <span><a href="contact.html">Contact</a> · <a href="booking.html">Book a session</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Hilltop Sauna — Sauna, Ice Bath &amp; Hot Tub on Cavehill, Belfast</title>
+  <meta name="description" content="A sauna, ice bath, hot tub and outdoor wild shower on the edge of Cavehill — with landscape views over Belfast. Book shared or private sessions online.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Schibsted+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <path d="M4 26L14 8l4 7 4-5 6 16H4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          <circle cx="18" cy="6" r="2" fill="#D9714A"/>
+        </svg>
+        The Hilltop Sauna
+      </a>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="nav__links">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <span class="nav__cta"><a href="booking.html" class="btn btn--primary">Book Now</a></span>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__eyebrow-row">
+          <span class="eyebrow">Sauna · Ice Bath · Hot Tub · Open Air</span>
+        </div>
+        <h1 class="hero__title">Heat rises. Cold clears.<br>Find <span class="accent">the ritual</span> on the hill.</h1>
+        <p class="hero__lede">Perched on the edge of Cavehill with landscape views over Belfast, The Hilltop Sauna pairs a proper hot sauna with an ice-cold plunge, a hot tub, and an outdoor wild shower. Book a session, bring a friend, and let the contrast do the rest.</p>
+        <div class="hero__actions">
+          <a href="booking.html" class="btn btn--primary">Book a session</a>
+          <a href="#ritual" class="btn btn--ghost">See the ritual</a>
+        </div>
+
+        <div class="hero__ridge-wrap">
+          <svg class="ridge" viewBox="0 0 1200 480" preserveAspectRatio="none" role="img" aria-label="Elevation profile of Cavehill, showing the sauna near the top and the ice bath below">
+            <defs>
+              <linearGradient id="ridgeFill" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#D9714A" stop-opacity="0.16"/>
+                <stop offset="0.5" stop-color="#4A3526" stop-opacity="0.55"/>
+                <stop offset="1" stop-color="#8FB4C0" stop-opacity="0.18"/>
+              </linearGradient>
+              <linearGradient id="ridgeStroke" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#D9714A"/>
+                <stop offset="1" stop-color="#8FB4C0"/>
+              </linearGradient>
+              <radialGradient id="emberGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0" stop-color="#D9714A" stop-opacity="0.55"/>
+                <stop offset="1" stop-color="#D9714A" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="glacierGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0" stop-color="#8FB4C0" stop-opacity="0.5"/>
+                <stop offset="1" stop-color="#8FB4C0" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+
+            <!-- contour lines -->
+            <g opacity="0.35" stroke="#6E5239" fill="none" stroke-width="1">
+              <path d="M-10,175 C60,115 100,75 180,105 C280,140 340,95 430,145 C520,195 580,165 660,225 C760,295 820,245 900,305 C980,365 1040,335 1110,385 C1150,410 1180,405 1210,430"/>
+            </g>
+            <g opacity="0.18" stroke="#6E5239" fill="none" stroke-width="1">
+              <path d="M-10,210 C60,150 100,110 180,140 C280,175 340,130 430,180 C520,230 580,200 660,260 C760,330 820,280 900,340 C980,400 1040,370 1110,420 C1150,445 1180,440 1210,465"/>
+            </g>
+
+            <!-- main ridge -->
+            <path d="M-10,140 C60,80 100,40 180,70 C280,105 340,60 430,110 C520,160 580,130 660,190 C760,260 820,210 900,270 C980,330 1040,300 1110,350 C1150,375 1180,370 1210,395 L1210,480 L-10,480 Z" fill="url(#ridgeFill)"/>
+            <path d="M-10,140 C60,80 100,40 180,70 C280,105 340,60 430,110 C520,160 580,130 660,190 C760,260 820,210 900,270 C980,330 1040,300 1110,350 C1150,375 1180,370 1210,395" fill="none" stroke="url(#ridgeStroke)" stroke-width="2"/>
+
+            <!-- ritual path -->
+            <path d="M180,70 C420,160 760,150 1110,350" fill="none" stroke="#C9BCA8" stroke-width="1" stroke-dasharray="3 7" opacity="0.5"/>
+
+            <!-- peak marker: sauna -->
+            <circle cx="180" cy="70" r="46" fill="url(#emberGlow)"/>
+            <circle cx="180" cy="70" r="5" fill="#D9714A"/>
+
+            <!-- steam wisps -->
+            <g stroke="#EDE5D8" fill="none" stroke-width="1.5" stroke-linecap="round" opacity="0.45">
+              <path class="steam steam--1" d="M168,55 C176,40 162,28 170,12"/>
+              <path class="steam steam--2" d="M182,58 C190,44 178,30 186,14"/>
+              <path class="steam steam--3" d="M196,55 C204,42 192,30 200,16"/>
+            </g>
+
+            <!-- pool marker: ice bath -->
+            <ellipse cx="1110" cy="350" rx="80" ry="24" fill="url(#glacierGlow)"/>
+            <circle cx="1110" cy="350" r="5" fill="#8FB4C0"/>
+          </svg>
+
+          <div class="hero__readout hero__readout--peak">
+            <span class="label">Sauna</span>
+            <span class="value">82°C</span>
+          </div>
+          <div class="hero__readout hero__readout--base">
+            <span class="label">Ice Bath</span>
+            <span class="value">4°C</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ THE RITUAL ============ -->
+    <section class="section section--char" id="ritual">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow">The ritual</span>
+          <h2>Four steps. One view.</h2>
+          <p>However you like to take it, every visit moves between heat and cold — with the hot tub and outdoor shower rounding things off. Repeat the loop as many times as you like.</p>
+        </div>
+
+        <div class="ritual ritual--four">
+          <div class="ritual__step">
+            <span class="ritual__temp">Sauna · ~15 min</span>
+            <h3>Heat</h3>
+            <p>Settle into the sauna, let the heat get into your bones, and watch Belfast spread out below through the steam.</p>
+          </div>
+          <div class="ritual__step ritual__step--cold">
+            <span class="ritual__temp">Ice bath · 30–60 sec</span>
+            <h3>Plunge</h3>
+            <p>Step into the ice bath. Short, sharp, and exactly long enough to clear your head and wake everything up.</p>
+          </div>
+          <div class="ritual__step ritual__step--soak">
+            <span class="ritual__temp">Hot tub</span>
+            <h3>Soak</h3>
+            <p>Ease into the hot tub, let your muscles loosen at a slower pace, and take in the view from the warm water.</p>
+          </div>
+          <div class="ritual__step ritual__step--rest">
+            <span class="ritual__temp">Open air</span>
+            <h3>Reset</h3>
+            <p>Rinse off under the outdoor wild shower before you go again. Most people do the full loop two or three times.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FACILITIES PREVIEW ============ -->
+    <section class="section section--cedar">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow">What's on the hill</span>
+          <h2>Sauna, ice bath, hot tub — and that view</h2>
+          <p>Every session includes the full run of facilities. Choose a shared or private booking, then see what's included on the services page.</p>
+        </div>
+
+        <div class="cards-grid">
+          <div class="card">
+            <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22c4 0 7-3 7-7 0-3-2-5-3-7-1 2-2 3-3 3-1-2 0-5-1-7-3 3-6 7-6 11 0 4 3 7 6 7z"/></svg>
+            <h3>The Sauna</h3>
+            <p>A proper hot sauna with room for friends — or a quiet corner if you'd rather just sit with the heat and the view.</p>
+            <a href="services.html" class="card__link">See more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+
+          <div class="card">
+            <svg class="card__icon card__icon--glacier" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2s6 7 6 12a6 6 0 0 1-12 0c0-5 6-12 6-12z"/></svg>
+            <h3>Ice Bath &amp; Cold Plunge</h3>
+            <p>The cold plunge pool is the whole point — short, sharp, and somehow the best part of the loop once you're out.</p>
+            <a href="services.html" class="card__link">See more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+
+          <div class="card">
+            <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14a9 5 0 0 0 18 0"/><path d="M3 14v-3a9 5 0 0 1 18 0v3"/><path d="M8 7c0-1-1-1-1-2s1-1 1-2"/><path d="M12 7c0-1-1-1-1-2s1-1 1-2"/><path d="M16 7c0-1-1-1-1-2s1-1 1-2"/></svg>
+            <h3>Hot Tub &amp; Outdoor Shower</h3>
+            <p>Warm up properly in the hot tub, then rinse off under the outdoor wild shower with Belfast laid out below.</p>
+            <a href="services.html" class="card__link">See more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="section section--char">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow eyebrow--glacier">From the hill</span>
+          <h2>What guests say</h2>
+          <span class="rating-badge"><strong>★ 5.0</strong> from 27 reviews on <a href="https://booksy.com/en-gb/182090_thehilltopsauna_wellness-day-spa_1511561_belfast" target="_blank" rel="noopener">Booksy</a></span>
+        </div>
+
+        <div class="testimonials">
+          <figure class="testimonial">
+            <p>"The views are incredible, the prices are fair, and the team couldn't be more welcoming — we're already planning our next visit."</p>
+            <cite>— Ellen, Booksy review</cite>
+          </figure>
+          <figure class="testimonial">
+            <p>"A properly hot sauna, a seriously cold ice bath, a big hot tub, and one of the best views around. We'll definitely be back."</p>
+            <cite>— Gareth, Booksy review</cite>
+          </figure>
+          <figure class="testimonial">
+            <p>"Spotlessly clean and exactly the quiet reset I needed. Can't wait to come back."</p>
+            <cite>— Rachael, Booksy review</cite>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALLERY PREVIEW ============ -->
+    <section class="section section--char-2">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow">A look inside</span>
+          <h2>The hill, in pictures</h2>
+        </div>
+
+        <div class="gallery-grid">
+          <a href="gallery.html" class="gallery-preview__item">
+            <img src="website photos/IMG_7313.jpeg" alt="Inside the sauna, looking out over Belfast">
+            <span class="gallery__caption">The sauna</span>
+          </a>
+          <a href="gallery.html" class="gallery-preview__item">
+            <img src="website photos/View recent photos.png" alt="The ice baths, ready and waiting">
+            <span class="gallery__caption">The ice baths</span>
+          </a>
+          <a href="gallery.html" class="gallery-preview__item">
+            <img src="website photos/IMG_4274.jpeg" alt="Belfast skyline from Cavehill at sunset">
+            <span class="gallery__caption">Belfast from Cavehill</span>
+          </a>
+        </div>
+        <p class="gallery-note"><a href="gallery.html" class="card__link">View full gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:14px;height:14px;display:inline;vertical-align:middle"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+      </div>
+    </section>
+
+    <!-- ============ CTA / VISIT ============ -->
+    <section class="section section--light">
+      <div class="container cta-band">
+        <span class="eyebrow">Plan your visit</span>
+        <h2>Ready to feel the difference?</h2>
+        <p>Sauna, ice bath, hot tub, and an outdoor wild shower — all included with every session. Book online to see live availability.</p>
+        <div class="hero__actions">
+          <a href="booking.html" class="btn btn--primary">Book a session</a>
+          <a href="contact.html" class="btn btn--ghost-dark">Get directions</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="ridge-divider">
+        <svg viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="footerRidge" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#D9714A"/>
+              <stop offset="1" stop-color="#8FB4C0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0,30 C150,10 300,35 450,20 C600,5 750,30 900,15 C1050,5 1150,25 1200,18" fill="none" stroke="url(#footerRidge)" stroke-width="2" opacity="0.6"/>
+        </svg>
+      </div>
+
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">
+            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <path d="M4 26L14 8l4 7 4-5 6 16H4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <circle cx="18" cy="6" r="2" fill="#D9714A"/>
+            </svg>
+            The Hilltop Sauna
+          </div>
+          <p>Sauna, ice bath, hot tub, and an outdoor wild shower on the edge of Cavehill — with landscape views over Belfast. Open air, all year.</p>
+        </div>
+
+        <div>
+          <h4>Explore</h4>
+          <div class="footer__links">
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="booking.html">Booking</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Visit</h4>
+          <div class="footer__links">
+            <span>33 Upper Hightown Road</span>
+            <span>Newtownabbey, BT14 8RR</span>
+            <a href="contact.html">Get directions</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Reviews</h4>
+          <div class="footer__links">
+            <span class="rating-badge"><strong>★ 5.0</strong> · 27 reviews</span>
+            <a href="https://booksy.com/en-gb/182090_thehilltopsauna_wellness-day-spa_1511561_belfast" target="_blank" rel="noopener">View on Booksy</a>
+            <a href="booking.html">Book a session</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© 2026 The Hilltop Sauna. All rights reserved.</span>
+        <span><a href="contact.html">Contact</a> · <a href="booking.html">Book a session</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
