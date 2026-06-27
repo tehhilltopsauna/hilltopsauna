@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNav();
   initGallery();
   initContactForm();
+  initNavScroll();
 });
 
 /* ---- Mobile navigation ---- */
@@ -84,6 +85,22 @@ function initContactForm() {
     form.querySelector('button[type="submit"]').textContent = 'Message sent';
     form.querySelector('button[type="submit"]').disabled = true;
   });
+}
+
+// ── Nav scroll background ─────────────────────────────────────────────
+function initNavScroll() {
+  const nav = document.querySelector('.nav');
+  const hero = document.querySelector('.hero--photo');
+  if (!nav) return;
+
+  const threshold = hero ? hero.offsetHeight : 100;
+
+  const update = () => {
+    nav.classList.toggle('nav--scrolled', window.scrollY > threshold);
+  };
+
+  window.addEventListener('scroll', update, { passive: true });
+  update();
 }
 
 // ── Facilities accordion ──────────────────────────────────────────────

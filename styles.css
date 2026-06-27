@@ -173,6 +173,11 @@ p { color: var(--birch-dim); }
   z-index: 100;
   background: transparent;
   border-bottom: none;
+  transition: background 0.3s ease;
+}
+
+.nav--scrolled {
+  background: #425A3A;
 }
 
 .nav__inner {
