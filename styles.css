@@ -253,12 +253,12 @@ p { color: var(--birch-dim); }
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--char-2);
+    background: #6B7A54;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
     padding: var(--space-2) var(--space-3) var(--space-3);
-    border-bottom: 1px solid rgba(237, 229, 216, 0.08);
+    border-bottom: 1px solid rgba(237, 229, 216, 0.12);
     transform: translateY(-8px);
     opacity: 0;
     visibility: hidden;
