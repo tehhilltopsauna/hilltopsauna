@@ -85,36 +85,87 @@
       </div>
     </section>
 
-    <!-- ============ FACILITIES PREVIEW ============ -->
-    <section class="section section--cedar">
+    <!-- ============ FACILITIES ACCORDION ============ -->
+    <section class="section facilities-accordion" id="facilities">
       <div class="container">
         <div class="section__head">
           <span class="eyebrow">What's on the hill</span>
-          <h2>Sauna, ice bath, hot tub — and that view</h2>
-          <p>Every session includes the full run of facilities. Choose a shared or private booking, then see what's included on the services page.</p>
+          <h2>Everything included, every session</h2>
         </div>
+        <div class="fac-grid">
 
-        <div class="cards-grid">
-          <div class="card">
-            <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22c4 0 7-3 7-7 0-3-2-5-3-7-1 2-2 3-3 3-1-2 0-5-1-7-3 3-6 7-6 11 0 4 3 7 6 7z"/></svg>
-            <h3>The Sauna</h3>
-            <p>A proper hot sauna with room for friends — or a quiet corner if you'd rather just sit with the heat and the view.</p>
-            <a href="services.html" class="card__link">See more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <div class="fac-item">
+            <button class="fac__header" aria-expanded="false">
+              <span class="fac__icon">
+                <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="6" y="28" width="36" height="14" rx="2"/>
+                  <path d="M12 28V18a4 4 0 0 1 4-4h16a4 4 0 0 1 4 4v10"/>
+                  <path d="M18 10c0-1.5 1-2 1-3s-1-1.5-1-3M24 10c0-1.5 1-2 1-3s-1-1.5-1-3M30 10c0-1.5 1-2 1-3s-1-1.5-1-3"/>
+                </svg>
+              </span>
+              <span class="fac__name">Sauna</span>
+              <span class="fac__toggle">+</span>
+            </button>
+            <div class="fac__body">
+              <p>A proper wood-heated sauna with room for your group and views over Belfast through the glass door. The heat works deep — most people stay in for 10–15 minutes before heading to the plunge. The longer you sit with it, the better it gets.</p>
+            </div>
           </div>
 
-          <div class="card">
-            <svg class="card__icon card__icon--glacier" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2s6 7 6 12a6 6 0 0 1-12 0c0-5 6-12 6-12z"/></svg>
-            <h3>Ice Bath &amp; Cold Plunge</h3>
-            <p>The cold plunge pool is the whole point — short, sharp, and somehow the best part of the loop once you're out.</p>
-            <a href="services.html" class="card__link">See more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <div class="fac-item">
+            <button class="fac__header" aria-expanded="false">
+              <span class="fac__icon">
+                <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="6" y="20" width="36" height="22" rx="2"/>
+                  <path d="M14 20v-4a10 10 0 0 1 20 0v4"/>
+                  <path d="M15 33 l4-5 l4 5 l4-5 l4 5 l4-5"/>
+                </svg>
+              </span>
+              <span class="fac__name">Cold Plunge</span>
+              <span class="fac__toggle">+</span>
+            </button>
+            <div class="fac__body">
+              <p>Two ice baths sitting on the deck at around 4°C. A short, sharp dip that clears your head and fires up your circulation. Thirty seconds is enough — though most people go back in. The contrast with the sauna is the whole point.</p>
+            </div>
           </div>
 
-          <div class="card">
-            <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14a9 5 0 0 0 18 0"/><path d="M3 14v-3a9 5 0 0 1 18 0v3"/><path d="M8 7c0-1-1-1-1-2s1-1 1-2"/><path d="M12 7c0-1-1-1-1-2s1-1 1-2"/><path d="M16 7c0-1-1-1-1-2s1-1 1-2"/></svg>
-            <h3>Hot Tub &amp; Outdoor Shower</h3>
-            <p>Warm up properly in the hot tub, then rinse off under the outdoor wild shower with Belfast laid out below.</p>
-            <a href="services.html" class="card__link">See more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <div class="fac-item">
+            <button class="fac__header" aria-expanded="false">
+              <span class="fac__icon">
+                <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M8 34 C8 26 14 22 24 22 C34 22 40 26 40 34 L40 38 a2 2 0 0 1-2 2 H10 a2 2 0 0 1-2-2 Z"/>
+                  <path d="M17 22 C17 16 20 12 24 12 C28 12 31 16 31 22"/>
+                  <path d="M21 12 C21 9 22 7 24 7 C26 7 27 9 27 12"/>
+                </svg>
+              </span>
+              <span class="fac__name">Hot Tub</span>
+              <span class="fac__toggle">+</span>
+            </button>
+            <div class="fac__body">
+              <p>A heated outdoor tub to ease into between rounds — warm water, fresh air, and the Cavehill hillside all around you. A good place to sit, recover, and take in the view before going again.</p>
+            </div>
           </div>
+
+          <div class="fac-item">
+            <button class="fac__header" aria-expanded="false">
+              <span class="fac__icon">
+                <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M24 6 v6"/>
+                  <path d="M14 10 h20"/>
+                  <path d="M12 18 c2-2 5-2 8 0 s6 2 8 0 s6-2 8 0"/>
+                  <line x1="16" y1="24" x2="15" y2="34"/>
+                  <line x1="21" y1="24" x2="21" y2="36"/>
+                  <line x1="27" y1="24" x2="27" y2="36"/>
+                  <line x1="32" y1="24" x2="31" y2="34"/>
+                </svg>
+              </span>
+              <span class="fac__name">Outdoor Wild Shower</span>
+              <span class="fac__toggle">+</span>
+            </button>
+            <div class="fac__body">
+              <p>An open-air shower on the hillside — cold water, fresh air, and nothing between you and Cavehill. Use it to rinse off between rounds or to finish your session. Simple, bracing, and exactly what it sounds like.</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
