@@ -1527,7 +1527,7 @@ p { color: var(--birch-dim); }
 
 /* ============ FACILITIES ACCORDION ============ */
 .facilities-accordion {
-  background: var(--cedar);
+  background: var(--char);
   position: relative;
 }
 
@@ -1539,7 +1539,7 @@ p { color: var(--birch-dim); }
   left: 0;
   right: 0;
   height: 160px;
-  background: linear-gradient(to bottom, transparent 0%, rgba(216,207,190,0.4) 50%, var(--cedar) 100%);
+  background: linear-gradient(to bottom, transparent 0%, rgba(216,207,190,0.4) 50%, var(--char) 100%);
   pointer-events: none;
 }
 
@@ -1554,7 +1554,7 @@ p { color: var(--birch-dim); }
 }
 
 .fac-item {
-  background: var(--cedar);
+  background: var(--char);
 }
 
 .fac__header {
