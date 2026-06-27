@@ -7,18 +7,18 @@
 
 :root {
   /* ---- Color tokens ---- */
-  --char: #1B1815;        /* primary background — charred cedar */
-  --char-2: #221D18;       /* slightly raised dark surface */
-  --cedar: #4A3526;        /* warm wood surface, cards on dark */
-  --cedar-light: #6E5239;  /* borders / hover on cedar */
-  --birch: #EDE5D8;        /* warm cream — text on dark, light bg */
-  --birch-dim: #C9BCA8;     /* muted birch — secondary text on dark */
-  --ember: #D9714A;        /* firelight — heat accent */
-  --ember-dim: #B85A38;     /* ember hover/active */
-  --glacier: #8FB4C0;       /* plunge water — cold accent */
-  --glacier-dim: #6E96A3;   /* glacier hover/active */
-  --moss: #8B9574;          /* sage — tertiary / nature accent */
-  --ink: #2B241D;           /* dark text on light surfaces */
+  --char: #F0E9DF;        /* warm linen — primary background */
+  --char-2: #E8E0D4;       /* warm cream — secondary background */
+  --cedar: #D8CFBE;        /* stone tile surface */
+  --cedar-light: #C4B8A4;  /* stone border / hover */
+  --birch: #3A3028;        /* dark warm brown — primary text */
+  --birch-dim: #7A6A58;    /* medium brown — secondary text */
+  --ember: #6B7A54;        /* earthy olive green — main accent */
+  --ember-dim: #596644;    /* olive hover/active */
+  --glacier: #8B9574;      /* sage green — secondary accent */
+  --glacier-dim: #7A8464;  /* sage hover/active */
+  --moss: #A09070;         /* warm earth/tan — tertiary accent */
+  --ink: #2C2018;          /* darkest brown — emphasis text */
 
   /* ---- Type ---- */
   --font-display: 'Zilla Slab', Georgia, serif;
@@ -144,7 +144,7 @@ p { color: var(--birch-dim); }
 .section--char { background: var(--char); }
 .section--char-2 { background: var(--char-2); }
 .section--cedar { background: var(--cedar); }
-.section--light { background: var(--birch); color: var(--ink); }
+.section--light { background: #FAF7F2; color: var(--ink); }
 
 .section__head {
   max-width: 640px;
@@ -169,9 +169,9 @@ p { color: var(--birch-dim); }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(27, 24, 21, 0.92);
+  background: rgba(240, 233, 223, 0.96);
   backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(237, 229, 216, 0.08);
+  border-bottom: 1px solid rgba(58, 48, 40, 0.12);
 }
 
 .nav__inner {
@@ -298,7 +298,7 @@ p { color: var(--birch-dim); }
 
 .btn--primary {
   background: var(--ember);
-  color: var(--char);
+  color: #FAF7F2;
 }
 .btn--primary:hover { background: var(--ember-dim); }
 
@@ -306,7 +306,7 @@ p { color: var(--birch-dim); }
   border-color: var(--birch-dim);
   color: var(--birch);
 }
-.btn--ghost:hover { border-color: var(--birch); background: rgba(237,229,216,0.06); }
+.btn--ghost:hover { border-color: var(--birch); background: rgba(58,48,40,0.06); }
 
 .btn--ghost-dark {
   border-color: var(--cedar-light);
@@ -316,7 +316,7 @@ p { color: var(--birch-dim); }
 
 .btn--glacier {
   background: var(--glacier);
-  color: var(--char);
+  color: #FAF7F2;
 }
 .btn--glacier:hover { background: var(--glacier-dim); }
 
@@ -362,7 +362,7 @@ p { color: var(--birch-dim); }
 
 .hero {
   position: relative;
-  background: linear-gradient(180deg, var(--char) 0%, #1F1A16 100%);
+  background: linear-gradient(180deg, var(--char) 0%, var(--char-2) 100%);
   overflow: hidden;
 }
 
@@ -534,7 +534,7 @@ p { color: var(--birch-dim); }
 }
 
 .card {
-  background: var(--cedar);
+  background: var(--char);
   border: 1px solid var(--cedar-light);
   border-radius: var(--radius-lg);
   padding: var(--space-4);
@@ -1300,9 +1300,15 @@ p { color: var(--birch-dim); }
    =================================================================== */
 
 .footer {
-  background: var(--char-2);
+  background: #3C3024;
   padding-top: var(--space-5);
+  color: #C9BCA8;
 }
+
+.footer h4 { color: #A09080; }
+.footer__brand { color: #EDE5D8; }
+.footer p { color: #C9BCA8; }
+.footer__bottom { border-top-color: rgba(237,229,216,0.1); color: #A09080; }
 
 .footer__grid {
   display: grid;
