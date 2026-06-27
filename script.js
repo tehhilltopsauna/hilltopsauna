@@ -15,15 +15,19 @@ function initNav() {
   const links = document.querySelector('.nav__links');
   if (!toggle || !links) return;
 
+  const nav = document.querySelector('.nav');
+
   toggle.addEventListener('click', () => {
     const isOpen = links.classList.toggle('is-open');
     toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    if (nav) nav.classList.toggle('nav--menu-open', isOpen);
   });
 
   links.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       links.classList.remove('is-open');
       toggle.setAttribute('aria-expanded', 'false');
+      if (nav) nav.classList.remove('nav--menu-open');
     });
   });
 }
@@ -93,7 +97,12 @@ function initNavScroll() {
   const hero = document.querySelector('.hero--photo');
   if (!nav) return;
 
-  const threshold = hero ? hero.offsetHeight : 100;
+  if (!hero) {
+    nav.classList.add('nav--scrolled');
+    return;
+  }
+
+  const threshold = hero.offsetHeight;
 
   const update = () => {
     nav.classList.toggle('nav--scrolled', window.scrollY > threshold);
