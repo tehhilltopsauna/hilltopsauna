@@ -13,9 +13,9 @@
   --cedar-light: #B8AD98;  /* stone border / hover */
   --birch: #3A3028;        /* dark warm brown — primary text */
   --birch-dim: #7A6A58;    /* medium brown — secondary text */
-  --ember: #6B7A54;        /* earthy olive green — main accent */
+  --ember: #4F6347;        /* earthy olive green — main accent */
   --ember-dim: #596644;    /* olive hover/active */
-  --glacier: #8B9574;      /* sage green — secondary accent */
+  --glacier: #718F65;      /* sage green — secondary accent */
   --glacier-dim: #7A8464;  /* sage hover/active */
   --moss: #A09070;         /* warm earth/tan — tertiary accent */
   --ink: #2C2018;          /* darkest brown — emphasis text */
@@ -169,7 +169,7 @@ p { color: var(--birch-dim); }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: #6B7A54;
+  background: #4F6347;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
@@ -253,7 +253,7 @@ p { color: var(--birch-dim); }
     top: 100%;
     left: 0;
     right: 0;
-    background: #6B7A54;
+    background: #4F6347;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
@@ -918,7 +918,7 @@ p { color: var(--birch-dim); }
 .ph--5 { background: linear-gradient(135deg, #7E8A6C 0%, #3A3F2E 100%); }
 .ph--6 { background: linear-gradient(135deg, #D9714A 0%, #4A3526 100%); }
 .ph--7 { background: linear-gradient(135deg, #2E2319 0%, #6E96A3 100%); }
-.ph--8 { background: linear-gradient(135deg, #4A3526 0%, #8B9574 100%); }
+.ph--8 { background: linear-gradient(135deg, #4A3526 0%, #718F65 100%); }
 .ph--9 { background: linear-gradient(135deg, #1B2D32 0%, #D9714A 100%); }
 
 /* Lightbox */
