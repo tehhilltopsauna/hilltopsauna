@@ -7,10 +7,10 @@
 
 :root {
   /* ---- Color tokens ---- */
-  --char: #F0E9DF;        /* warm linen — primary background */
-  --char-2: #E8E0D4;       /* warm cream — secondary background */
-  --cedar: #D8CFBE;        /* stone tile surface */
-  --cedar-light: #C4B8A4;  /* stone border / hover */
+  --char: #D8CFBE;        /* stone — primary background */
+  --char-2: #D0C7B6;       /* stone darker — secondary background */
+  --cedar: #C8BEA8;        /* stone tile surface */
+  --cedar-light: #B8AD98;  /* stone border / hover */
   --birch: #3A3028;        /* dark warm brown — primary text */
   --birch-dim: #7A6A58;    /* medium brown — secondary text */
   --ember: #6B7A54;        /* earthy olive green — main accent */
