@@ -203,7 +203,7 @@ p { color: var(--birch-dim); }
 .nav__logo svg { width: 28px; height: 28px; flex-shrink: 0; }
 
 .nav__logo-img {
-  height: 52px;
+  height: 68px;
   width: auto;
   object-fit: contain;
   display: block;
