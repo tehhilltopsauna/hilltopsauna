@@ -1527,7 +1527,7 @@ p { color: var(--birch-dim); }
 
 /* ============ FACILITIES ACCORDION ============ */
 .facilities-accordion {
-  background: var(--char);
+  background: var(--cedar);
   position: relative;
 }
 
@@ -1535,11 +1535,11 @@ p { color: var(--birch-dim); }
 .facilities-accordion::before {
   content: '';
   position: absolute;
-  top: -80px;
+  top: -160px;
   left: 0;
   right: 0;
-  height: 80px;
-  background: linear-gradient(to bottom, transparent, var(--char));
+  height: 160px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(216,207,190,0.4) 50%, var(--cedar) 100%);
   pointer-events: none;
 }
 
@@ -1554,7 +1554,7 @@ p { color: var(--birch-dim); }
 }
 
 .fac-item {
-  background: var(--char);
+  background: var(--cedar);
 }
 
 .fac__header {
@@ -1570,7 +1570,7 @@ p { color: var(--birch-dim); }
   color: var(--birch);
   transition: background 0.2s;
 }
-.fac__header:hover { background: var(--char-2); }
+.fac__header:hover { background: rgba(58,48,40,0.05); }
 
 .fac__icon {
   flex-shrink: 0;
