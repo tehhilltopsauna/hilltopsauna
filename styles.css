@@ -166,8 +166,10 @@ p { color: var(--birch-dim); }
    =================================================================== */
 
 .nav {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   background: transparent;
   border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -357,6 +359,7 @@ p { color: var(--birch-dim); }
 
 .page-hero {
   padding: var(--space-6) 0 var(--space-5);
+  padding-top: calc(var(--space-6) + 120px);
   background: var(--char);
   position: relative;
 }
@@ -407,6 +410,7 @@ p { color: var(--birch-dim); }
   flex-direction: column;
   align-items: center;
   padding: var(--space-7) 0;
+  padding-top: calc(var(--space-7) + 120px);
 }
 
 .hero__logo {
