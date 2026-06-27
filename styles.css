@@ -403,6 +403,14 @@ p { color: var(--birch-dim); }
   padding: var(--space-7) 0;
 }
 
+.hero__logo {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  border-radius: 50%;
+  margin-bottom: var(--space-3);
+}
+
 .hero__tagline {
   font-family: var(--font-mono);
   font-size: 0.78rem;
