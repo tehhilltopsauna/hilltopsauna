@@ -403,11 +403,11 @@ p { color: var(--birch-dim); }
   padding: var(--space-7) 0;
 }
 
-.nav__logo-img {
-  height: 48px;
-  width: auto;
+.hero__logo {
+  width: 180px;
+  height: auto;
   object-fit: contain;
-  display: block;
+  margin-bottom: var(--space-3);
 }
 
 .hero__tagline {
