@@ -169,9 +169,8 @@ p { color: var(--birch-dim); }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(240, 233, 223, 0.96);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(58, 48, 40, 0.12);
+  background: #3A4A2E;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .nav__inner {
@@ -198,7 +197,7 @@ p { color: var(--birch-dim); }
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  color: var(--birch);
+  color: #EDE5D8;
 }
 
 .nav__logo svg { width: 28px; height: 28px; flex-shrink: 0; }
@@ -218,7 +217,7 @@ p { color: var(--birch-dim); }
 }
 
 .nav__links a {
-  color: var(--birch-dim);
+  color: rgba(237,229,216,0.75);
   transition: color 0.2s ease;
   padding: 0.25rem 0;
   border-bottom: 1px solid transparent;
@@ -226,7 +225,7 @@ p { color: var(--birch-dim); }
 
 .nav__links a:hover,
 .nav__links a[aria-current="page"] {
-  color: var(--birch);
+  color: #EDE5D8;
   border-bottom-color: var(--ember);
 }
 
