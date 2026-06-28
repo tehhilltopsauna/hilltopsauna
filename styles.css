@@ -1612,8 +1612,21 @@ p { color: var(--birch-dim); }
 
 .footer {
   background: #3C3024;
-  padding-top: var(--space-5);
+  padding-top: var(--space-6);
   color: #C9BCA8;
+}
+
+.footer-cta {
+  text-align: center;
+  padding: var(--space-6) 0 var(--space-5);
+  border-bottom: 1px solid rgba(237,229,216,0.08);
+  margin-bottom: var(--space-5);
+}
+
+.footer-cta h2 {
+  color: #EDE5D8;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  margin-bottom: var(--space-4);
 }
 
 .footer h4 { color: #A09080; }
