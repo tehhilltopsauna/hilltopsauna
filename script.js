@@ -153,8 +153,8 @@ function initGalleryCarousel() {
 
   const scrollBy = () => track.querySelector('.gallery-carousel__item').offsetWidth + 3;
 
-  next.addEventListener('click', () => track.scrollBy({ left: scrollBy() * 3, behavior: 'smooth' }));
-  prev.addEventListener('click', () => track.scrollBy({ left: -scrollBy() * 3, behavior: 'smooth' }));
+  next.addEventListener('click', () => track.scrollBy({ left: scrollBy(), behavior: 'smooth' }));
+  prev.addEventListener('click', () => track.scrollBy({ left: -scrollBy(), behavior: 'smooth' }));
 }
 
 // ── Sessions cards ────────────────────────────────────────────────────
