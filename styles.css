@@ -1618,9 +1618,7 @@ p { color: var(--birch-dim); }
 
 .footer-cta {
   text-align: center;
-  padding: var(--space-6) 0 var(--space-5);
-  border-bottom: 1px solid rgba(237,229,216,0.08);
-  margin-bottom: var(--space-5);
+  padding: var(--space-4) 0 var(--space-3);
 }
 
 .footer-cta h2 {
