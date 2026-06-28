@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initTestimonials();
   initSessions();
   initGalleryCarousel();
+  initStatCounters();
+  initScienceBenefits();
 });
 
 /* ---- Mobile navigation ---- */
@@ -209,4 +211,55 @@ function initFacStory() {
       slides[i].scrollIntoView({ behavior: 'smooth' });
     });
   });
+}
+
+// ── Stat counters ─────────────────────────────────────────────────────
+function initStatCounters() {
+  const stats = document.querySelectorAll('.science-stat');
+  if (!stats.length) return;
+
+  const animate = (el) => {
+    const target = parseInt(el.dataset.target);
+    const countEl = el.querySelector('.science-stat__count');
+    const duration = 1800;
+    const start = performance.now();
+
+    const tick = (now) => {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      countEl.textContent = Math.round(eased * target);
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+
+    requestAnimationFrame(tick);
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        animate(e.target);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  stats.forEach(s => observer.observe(s));
+}
+
+// ── Science benefit slide-ins ─────────────────────────────────────────
+function initScienceBenefits() {
+  const items = document.querySelectorAll('.science-benefit');
+  if (!items.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  items.forEach(item => observer.observe(item));
 }
