@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initGallery();
   initContactForm();
   initNavScroll();
+  initFacStory();
 });
 
 /* ---- Mobile navigation ---- */
@@ -112,17 +113,39 @@ function initNavScroll() {
   update();
 }
 
-// ── Facilities accordion ──────────────────────────────────────────────
-document.querySelectorAll('.fac__header').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const isOpen = btn.getAttribute('aria-expanded') === 'true';
-    document.querySelectorAll('.fac__header').forEach(b => {
-      b.setAttribute('aria-expanded', 'false');
-      b.nextElementSibling.classList.remove('is-open');
+// ── Facilities scroll story ───────────────────────────────────────────
+function initFacStory() {
+  const slides = document.querySelectorAll('.fac-story__slide');
+  const dots = document.querySelectorAll('.fac-story__dot');
+  const dotsNav = document.querySelector('.fac-story__dots');
+  const section = document.querySelector('.fac-story');
+  if (!slides.length) return;
+
+  // Show/hide dots based on whether section is in view
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (dotsNav) dotsNav.classList.toggle('is-visible', e.isIntersecting);
     });
-    if (!isOpen) {
-      btn.setAttribute('aria-expanded', 'true');
-      btn.nextElementSibling.classList.add('is-open');
-    }
+  }, { threshold: 0.1 });
+  if (section) sectionObserver.observe(section);
+
+  // Animate each slide as it enters the viewport
+  const slideObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      const idx = parseInt(e.target.dataset.index);
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        dots.forEach((d, i) => d.classList.toggle('is-active', i === idx));
+      }
+    });
+  }, { threshold: 0.4 });
+
+  slides.forEach(slide => slideObserver.observe(slide));
+
+  // Dot click scrolls to that slide
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      slides[i].scrollIntoView({ behavior: 'smooth' });
+    });
   });
-});
+}
