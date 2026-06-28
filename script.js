@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initNavScroll();
   initFacStory();
+  initTestimonials();
 });
 
 /* ---- Mobile navigation ---- */
@@ -111,6 +112,34 @@ function initNavScroll() {
 
   window.addEventListener('scroll', update, { passive: true });
   update();
+}
+
+// ── Testimonials carousel ─────────────────────────────────────────────
+function initTestimonials() {
+  const slides = document.querySelectorAll('.testimonial--featured');
+  const dots = document.querySelectorAll('.t-dot');
+  const prev = document.querySelector('.t-prev');
+  const next = document.querySelector('.t-next');
+  if (!slides.length) return;
+
+  let current = 0;
+
+  function show(idx) {
+    slides[current].classList.remove('is-active');
+    dots[current].classList.remove('is-active');
+    current = (idx + slides.length) % slides.length;
+    slides[current].classList.add('is-active');
+    dots[current].classList.add('is-active');
+  }
+
+  slides[0].classList.add('is-active');
+
+  prev.addEventListener('click', () => show(current - 1));
+  next.addEventListener('click', () => show(current + 1));
+  dots.forEach((dot, i) => dot.addEventListener('click', () => show(i)));
+
+  // Auto-rotate every 5 seconds
+  setInterval(() => show(current + 1), 5000);
 }
 
 // ── Facilities scroll story ───────────────────────────────────────────
