@@ -592,10 +592,10 @@ p { color: var(--birch-dim); }
   background: var(--char-2);
   border: 1.5px solid var(--ember);
   border-radius: 8px;
-  padding: var(--space-3);
+  padding: var(--space-5);
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: var(--space-3);
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.7s ease, transform 0.7s ease;
@@ -608,6 +608,12 @@ p { color: var(--birch-dim); }
 
 .session-card--featured {
   transition-delay: 0.15s;
+}
+
+.session-card .btn {
+  padding: 0.5rem 1.4rem;
+  align-self: center;
+  margin-top: auto;
 }
 
 .session-card__type {
