@@ -1133,6 +1133,79 @@ p { color: var(--birch-dim); }
   color: var(--birch-dim);
 }
 
+/* Gallery filmstrip */
+.gallery-strip-section {
+  background: var(--char);
+  padding: var(--space-6) 0;
+}
+
+.gallery-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  margin: var(--space-4) 0 0;
+}
+
+.gallery-strip__item {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  display: block;
+}
+
+.gallery-strip__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-strip__item:hover img {
+  transform: scale(1.04);
+}
+
+.gallery-strip__label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-3) var(--space-3) var(--space-2);
+  background: linear-gradient(to top, rgba(15,10,5,0.65), transparent);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(237,229,216,0.9);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-strip__item:hover .gallery-strip__label {
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .gallery-strip { grid-template-columns: 1fr; }
+}
+
+/* Green CTA band */
+.section--green-cta {
+  background: #425A3A;
+}
+
+.section--green-cta h2,
+.section--green-cta h3 { color: #EDE5D8; }
+
+.section--green-cta p { color: rgba(237,229,216,0.75); }
+
+.section--green-cta .eyebrow {
+  color: rgba(237,229,216,0.6);
+}
+
+.section--green-cta .eyebrow::before {
+  background: rgba(237,229,216,0.6);
+}
+
 /* ===================================================================
    FORMS — booking & contact
    =================================================================== */
