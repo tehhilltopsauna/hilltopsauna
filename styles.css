@@ -553,12 +553,12 @@ p { color: var(--birch-dim); }
 
 .sessions-dark {
   background: var(--char);
-  padding: var(--space-7) 0;
+  padding: var(--space-5) 0;
 }
 
 .sessions-dark__head {
   max-width: 580px;
-  margin: 0 auto var(--space-6);
+  margin: 0 auto var(--space-4);
   text-align: center;
 }
 
