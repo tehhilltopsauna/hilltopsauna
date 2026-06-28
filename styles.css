@@ -547,26 +547,26 @@ p { color: var(--birch-dim); }
    =================================================================== */
 
 /* ===================================================================
-   RITUAL — dark immersive timeline
+   SESSIONS — dark two-card layout
    =================================================================== */
 
-.ritual-dark {
+.sessions-dark {
   background: #0E0905;
   padding: var(--space-7) 0;
 }
 
-.ritual-dark__head {
+.sessions-dark__head {
   max-width: 580px;
-  margin: 0 auto var(--space-7);
+  margin: 0 auto var(--space-6);
   text-align: center;
 }
 
-.ritual-dark__head h2 {
+.sessions-dark__head h2 {
   color: #EDE5D8;
   margin-bottom: var(--space-2);
 }
 
-.ritual-dark__head p {
+.sessions-dark__head p {
   color: rgba(237, 229, 216, 0.55);
   font-size: 1.05rem;
 }
@@ -574,150 +574,104 @@ p { color: var(--birch-dim); }
 .eyebrow--ember { color: var(--ember); }
 .eyebrow--ember::before { background: var(--ember); }
 
-/* Timeline container with centre line */
-.ritual-timeline {
-  position: relative;
-  max-width: 860px;
+.sessions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  max-width: 900px;
   margin: 0 auto;
 }
 
-.ritual-timeline::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: linear-gradient(to bottom,
-    transparent 0%,
-    rgba(107, 91, 68, 0.45) 8%,
-    rgba(107, 91, 68, 0.45) 92%,
-    transparent 100%);
-  transform: translateX(-50%);
-}
-
-/* Each row */
-.ritual-timeline__step {
-  display: grid;
-  grid-template-columns: 1fr 48px 1fr;
-  gap: 0 var(--space-4);
-  align-items: start;
-  margin-bottom: var(--space-6);
+.session-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
-.ritual-timeline__step.is-visible {
+.session-card.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.ritual-timeline__step:last-child { margin-bottom: 0; }
-
-/* Centre column — node on the line */
-.ritual-timeline__centre {
-  display: flex;
-  justify-content: center;
-  padding-top: 0.35rem;
+.session-card--featured {
+  border-color: var(--ember);
+  background: rgba(66, 90, 58, 0.08);
+  transition-delay: 0.15s;
 }
 
-.ritual-timeline__node {
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  background: var(--ember);
-  box-shadow: 0 0 0 4px rgba(66, 90, 58, 0.25), 0 0 16px rgba(66, 90, 58, 0.4);
-  flex-shrink: 0;
-}
-
-.ritual-timeline__node--cold {
-  background: #718F65;
-  box-shadow: 0 0 0 4px rgba(113, 143, 101, 0.2), 0 0 16px rgba(113, 143, 101, 0.35);
-}
-
-/* Content card */
-.ritual-timeline__content {
-  padding: var(--space-3) var(--space-4);
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 6px;
-}
-
-.ritual-tl--right .ritual-timeline__content {
-  border-left: 2px solid var(--ember);
-}
-
-.ritual-tl--left .ritual-timeline__content {
-  border-right: 2px solid var(--ember);
-  text-align: right;
-}
-
-.ritual-timeline__num {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.2em;
-  color: rgba(237, 229, 216, 0.2);
-  margin-bottom: 0.4rem;
-}
-
-.ritual-timeline__badge {
-  display: inline-block;
+.session-card__type {
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  color: var(--ember);
-  margin-bottom: var(--space-2);
+  letter-spacing: 0.18em;
   text-transform: uppercase;
+  color: var(--ember);
 }
 
-.ritual-timeline__badge--cold { color: #718F65; }
-
-.ritual-timeline__content h3 {
-  font-size: 1.6rem;
+.session-card h3 {
+  font-size: clamp(1.6rem, 2.8vw, 2.1rem);
   color: #EDE5D8;
-  margin-bottom: var(--space-1);
+  line-height: 1.1;
+  margin: 0;
 }
 
-.ritual-timeline__content p {
+.session-card p {
   color: rgba(237, 229, 216, 0.6);
   font-size: 0.97rem;
-  line-height: 1.7;
+  line-height: 1.75;
+  margin: 0;
 }
 
-.ritual-timeline__spacer { /* empty column placeholder */ }
+.session-card__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
 
-/* Mobile — stack vertically with line on left */
-@media (max-width: 700px) {
-  .ritual-timeline::before {
-    left: 20px;
-    transform: none;
-  }
+.session-card__list li {
+  font-size: 0.92rem;
+  color: rgba(237, 229, 216, 0.5);
+  padding-left: 1.2em;
+  position: relative;
+}
 
-  .ritual-timeline__step {
-    grid-template-columns: 40px 1fr;
-    grid-template-rows: auto;
-  }
+.session-card__list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--ember);
+}
 
-  .ritual-tl--left .ritual-timeline__content,
-  .ritual-tl--right .ritual-timeline__content {
-    border-right: none;
-    border-left: 2px solid var(--ember);
-    text-align: left;
-  }
+.btn--outline-light {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.6rem;
+  border: 1px solid rgba(237, 229, 216, 0.3);
+  border-radius: var(--radius);
+  color: #EDE5D8;
+  transition: border-color 0.2s, background 0.2s;
+  text-align: center;
+}
 
-  .ritual-tl--left { grid-template-areas: "centre content"; }
-  .ritual-tl--right { grid-template-areas: "centre content"; }
+.btn--outline-light:hover {
+  border-color: #EDE5D8;
+  background: rgba(237, 229, 216, 0.06);
+}
 
-  .ritual-tl--left .ritual-timeline__centre,
-  .ritual-tl--right .ritual-timeline__centre { grid-area: centre; }
-
-  .ritual-tl--left .ritual-timeline__content,
-  .ritual-tl--right .ritual-timeline__content { grid-area: content; }
-
-  .ritual-tl--left .ritual-timeline__spacer,
-  .ritual-tl--right .ritual-timeline__spacer { display: none; }
+@media (max-width: 680px) {
+  .sessions-grid { grid-template-columns: 1fr; }
 }
 
 /* ===================================================================

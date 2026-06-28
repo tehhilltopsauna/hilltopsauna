@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavScroll();
   initFacStory();
   initTestimonials();
-  initRitual();
+  initSessions();
 });
 
 /* ---- Mobile navigation ---- */
@@ -143,10 +143,10 @@ function initTestimonials() {
   setInterval(() => show(current + 1), 5000);
 }
 
-// ── Ritual timeline ───────────────────────────────────────────────────
-function initRitual() {
-  const steps = document.querySelectorAll('.ritual-timeline__step');
-  if (!steps.length) return;
+// ── Sessions cards ────────────────────────────────────────────────────
+function initSessions() {
+  const cards = document.querySelectorAll('.session-card');
+  if (!cards.length) return;
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -155,12 +155,9 @@ function initRitual() {
         observer.unobserve(e.target);
       }
     });
-  }, { threshold: 0.25 });
+  }, { threshold: 0.2 });
 
-  steps.forEach((step, i) => {
-    step.style.transitionDelay = `${i * 0.15}s`;
-    observer.observe(step);
-  });
+  cards.forEach(card => observer.observe(card));
 }
 
 // ── Facilities scroll story ───────────────────────────────────────────
