@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFacStory();
   initTestimonials();
   initSessions();
+  initGalleryCarousel();
 });
 
 /* ---- Mobile navigation ---- */
@@ -141,6 +142,19 @@ function initTestimonials() {
 
   // Auto-rotate every 5 seconds
   setInterval(() => show(current + 1), 5000);
+}
+
+// ── Gallery carousel ──────────────────────────────────────────────────
+function initGalleryCarousel() {
+  const track = document.querySelector('.gallery-carousel__track');
+  const prev = document.querySelector('.gallery-carousel__btn--prev');
+  const next = document.querySelector('.gallery-carousel__btn--next');
+  if (!track || !next) return;
+
+  const scrollBy = () => track.querySelector('.gallery-carousel__item').offsetWidth + 3;
+
+  next.addEventListener('click', () => track.scrollBy({ left: scrollBy() * 3, behavior: 'smooth' }));
+  prev.addEventListener('click', () => track.scrollBy({ left: -scrollBy() * 3, behavior: 'smooth' }));
 }
 
 // ── Sessions cards ────────────────────────────────────────────────────
