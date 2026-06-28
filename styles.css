@@ -364,7 +364,7 @@ p { color: var(--birch-dim); }
    =================================================================== */
 
 .page-hero {
-  padding: var(--space-6) 0 var(--space-5);
+  padding: var(--space-6) 0 var(--space-3);
   padding-top: calc(var(--space-6) + 120px);
   background: var(--char);
   position: relative;
