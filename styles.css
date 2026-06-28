@@ -551,7 +551,7 @@ p { color: var(--birch-dim); }
    =================================================================== */
 
 .sessions-dark {
-  background: #0E0905;
+  background: var(--char);
   padding: var(--space-7) 0;
 }
 
@@ -562,12 +562,12 @@ p { color: var(--birch-dim); }
 }
 
 .sessions-dark__head h2 {
-  color: #EDE5D8;
+  color: var(--birch);
   margin-bottom: var(--space-2);
 }
 
 .sessions-dark__head p {
-  color: rgba(237, 229, 216, 0.55);
+  color: var(--birch-dim);
   font-size: 1.05rem;
 }
 
@@ -583,8 +583,8 @@ p { color: var(--birch-dim); }
 }
 
 .session-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--char-2);
+  border: 1.5px solid var(--ember);
   border-radius: 8px;
   padding: var(--space-5);
   display: flex;
@@ -601,8 +601,6 @@ p { color: var(--birch-dim); }
 }
 
 .session-card--featured {
-  border-color: var(--ember);
-  background: rgba(66, 90, 58, 0.08);
   transition-delay: 0.15s;
 }
 
@@ -616,13 +614,13 @@ p { color: var(--birch-dim); }
 
 .session-card h3 {
   font-size: clamp(1.6rem, 2.8vw, 2.1rem);
-  color: #EDE5D8;
+  color: var(--birch);
   line-height: 1.1;
   margin: 0;
 }
 
 .session-card p {
-  color: rgba(237, 229, 216, 0.6);
+  color: var(--birch-dim);
   font-size: 0.97rem;
   line-height: 1.75;
   margin: 0;
@@ -638,7 +636,7 @@ p { color: var(--birch-dim); }
 
 .session-card__list li {
   font-size: 0.92rem;
-  color: rgba(237, 229, 216, 0.5);
+  color: var(--birch-dim);
   padding-left: 1.2em;
   position: relative;
 }
