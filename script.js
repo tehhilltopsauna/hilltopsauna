@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavScroll();
   initFacStory();
   initTestimonials();
+  initRitual();
 });
 
 /* ---- Mobile navigation ---- */
@@ -140,6 +141,26 @@ function initTestimonials() {
 
   // Auto-rotate every 5 seconds
   setInterval(() => show(current + 1), 5000);
+}
+
+// ── Ritual timeline ───────────────────────────────────────────────────
+function initRitual() {
+  const steps = document.querySelectorAll('.ritual-timeline__step');
+  if (!steps.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.25 });
+
+  steps.forEach((step, i) => {
+    step.style.transitionDelay = `${i * 0.15}s`;
+    observer.observe(step);
+  });
 }
 
 // ── Facilities scroll story ───────────────────────────────────────────
