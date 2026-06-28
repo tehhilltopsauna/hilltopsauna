@@ -613,6 +613,7 @@ p { color: var(--birch-dim); }
 .session-card__type {
   font-family: var(--font-mono);
   font-size: 0.72rem;
+  font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--ember);
