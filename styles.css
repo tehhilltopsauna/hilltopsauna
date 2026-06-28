@@ -1652,19 +1652,19 @@ p { color: var(--birch-dim); }
 
 .footer {
   background: #3C3024;
-  padding-top: var(--space-6);
+  padding-top: var(--space-4);
   color: #C9BCA8;
 }
 
 .footer-cta {
   text-align: center;
-  padding: var(--space-4) 0 var(--space-3);
+  padding: var(--space-3) 0 var(--space-2);
 }
 
 .footer-cta h2 {
   color: #EDE5D8;
   font-size: clamp(1.8rem, 4vw, 2.8rem);
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-3);
 }
 
 .footer h4 { color: #A09080; }
@@ -1675,8 +1675,8 @@ p { color: var(--birch-dim); }
 .footer__grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr 1fr;
-  gap: var(--space-4);
-  padding-bottom: var(--space-5);
+  gap: var(--space-3);
+  padding-bottom: var(--space-3);
 }
 
 @media (max-width: 760px) {
