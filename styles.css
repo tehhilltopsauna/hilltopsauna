@@ -2245,3 +2245,36 @@ p { color: var(--birch-dim); }
   }
   .science-benefit--flip .science-benefit__img { order: -1; }
 }
+
+/* ── Floating Book Now button ─────────────────────────────────────────── */
+.float-book {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 200;
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid var(--ember);
+  color: var(--ember);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.3;
+  padding: 0.5rem;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.float-book:hover {
+  background: var(--ember);
+  color: #FAF7F2;
+  transform: scale(1.06);
+}
