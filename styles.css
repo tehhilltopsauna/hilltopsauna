@@ -2279,3 +2279,46 @@ p { color: var(--birch-dim); }
   color: #FAF7F2;
   transform: scale(1.06);
 }
+
+/* ── Contact quad layout ──────────────────────────────────────────────── */
+.contact-quad {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+.contact-quad__panel {
+  min-height: 500px;
+}
+
+.contact-quad__photo {
+  background-size: cover;
+  background-position: center;
+}
+
+.contact-quad__form {
+  background: var(--char);
+}
+
+.contact-quad__find {
+  background: var(--char-2);
+}
+
+.contact-quad__inner {
+  padding: var(--space-5);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .contact-quad {
+    grid-template-columns: 1fr;
+  }
+  .contact-quad__photo {
+    min-height: 280px;
+  }
+}

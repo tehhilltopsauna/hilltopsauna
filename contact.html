@@ -34,97 +34,81 @@
 
   <main>
 
-    <!-- ============ PAGE HERO ============ -->
-    <section class="page-hero">
-      <div class="container">
-        <span class="eyebrow">Get in touch</span>
-        <h1 class="page-hero__title">Visit us</h1>
-        <p>On the edge of Cavehill, with Belfast spread out below. Here's everything you need to find us — and a way to reach us if you've questions first.</p>
-      </div>
-    </section>
+    <!-- ============ CONTACT GRID ============ -->
+    <div class="contact-quad">
 
-    <!-- ============ FIND US ============ -->
-    <section class="section section--char" style="padding-top:0;">
-      <div class="container">
-        <div class="contact-grid">
-          <div>
-            <span class="eyebrow">Find us</span>
-            <h2>On the edge of Cavehill</h2>
-
-            <div class="info-list">
-              <div class="info-list__item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
-                <div>
-                  <strong>Cave Hill Country Park, Newtownabbey</strong>
-                  <span>On the edge of the park with parking nearby. The full address is in your booking confirmation email.</span>
-                </div>
-              </div>
-              <div class="info-list__item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-                <div>
-                  <strong>Sessions by appointment</strong>
-                  <span>All sessions are booked online — check the booking page for live availability throughout the week.</span>
-                </div>
-              </div>
-              <div class="info-list__item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l2 5-2 1c1 3 3 5 6 6l1-2 5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
-                <div>
-                  <strong>Phone</strong>
-                  <span>07923 158 869 / 07767 511 827</span>
-                </div>
-              </div>
-              <div class="info-list__item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
-                <div>
-                  <strong>Email</strong>
-                  <span>thehilltopsauna@outlook.com</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="hero__actions">
-              <a href="booking.html" class="btn btn--primary">Book a session</a>
-              <a href="mailto:thehilltopsauna@outlook.com" class="btn btn--ghost">Email us</a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ MESSAGE FORM ============ -->
-    <section class="section section--cedar" id="message">
-      <div class="container">
-        <div class="section__head section__head--center">
+      <!-- Top-left: Form -->
+      <div class="contact-quad__panel contact-quad__form">
+        <div class="contact-quad__inner">
           <span class="eyebrow eyebrow--glacier">Questions first?</span>
           <h2>Send us a message</h2>
           <p>Not ready to book? Send us a message — about accessibility, group sizes, gift vouchers, anything — and we'll get back to you.</p>
+          <form class="contact-form" action="https://formspree.io/f/xaqgdzpq" method="POST" style="margin-top:var(--space-3);">
+            <div class="field-row">
+              <div class="field">
+                <label for="c-name">Name</label>
+                <input type="text" id="c-name" name="name" required placeholder="Your name">
+              </div>
+              <div class="field">
+                <label for="c-email">Email</label>
+                <input type="email" id="c-email" name="email" required placeholder="you@example.com">
+              </div>
+            </div>
+            <div class="field">
+              <label for="c-message">Message</label>
+              <textarea id="c-message" name="message" rows="4" required placeholder="How can we help?"></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--block">Send message</button>
+            <div class="form-success">
+              <h4>Message sent</h4>
+              <p>Thanks for getting in touch — we'll reply within a day or two.</p>
+            </div>
+          </form>
         </div>
-
-        <form class="contact-form" action="https://formspree.io/f/xaqgdzpq" method="POST" style="max-width: 640px; margin: 0 auto;">
-          <div class="field-row">
-            <div class="field">
-              <label for="c-name">Name</label>
-              <input type="text" id="c-name" name="name" required placeholder="Your name">
-            </div>
-            <div class="field">
-              <label for="c-email">Email</label>
-              <input type="email" id="c-email" name="email" required placeholder="you@example.com">
-            </div>
-          </div>
-          <div class="field">
-            <label for="c-message">Message</label>
-            <textarea id="c-message" name="message" rows="5" required placeholder="How can we help?"></textarea>
-          </div>
-          <button type="submit" class="btn btn--primary btn--block">Send message</button>
-
-          <div class="form-success">
-            <h4>Message sent</h4>
-            <p>Thanks for getting in touch — we'll reply within a day or two.</p>
-          </div>
-        </form>
       </div>
-    </section>
+
+      <!-- Top-right: Photo -->
+      <div class="contact-quad__panel contact-quad__photo" style="background-image:url('website photos/gallery3.jpeg');"></div>
+
+      <!-- Bottom-left: Photo -->
+      <div class="contact-quad__panel contact-quad__photo" style="background-image:url('website photos/IMG_7309.jpeg');"></div>
+
+      <!-- Bottom-right: Find us -->
+      <div class="contact-quad__panel contact-quad__find">
+        <div class="contact-quad__inner">
+          <span class="eyebrow">How to find us</span>
+          <h2>On the edge of Cavehill</h2>
+          <div class="info-list" style="margin-top:var(--space-3);">
+            <div class="info-list__item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <div>
+                <strong>Cave Hill Country Park, Newtownabbey</strong>
+                <span>On the edge of the park with parking nearby. The full address is in your booking confirmation email.</span>
+              </div>
+            </div>
+            <div class="info-list__item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l2 5-2 1c1 3 3 5 6 6l1-2 5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+              <div>
+                <strong>Phone</strong>
+                <span>07923 158 869 / 07767 511 827</span>
+              </div>
+            </div>
+            <div class="info-list__item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              <div>
+                <strong>Email</strong>
+                <span>thehilltopsauna@outlook.com</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero__actions" style="margin-top:var(--space-3);">
+            <a href="booking.html" class="btn btn--primary">Book a session</a>
+            <a href="mailto:thehilltopsauna@outlook.com" class="btn btn--ghost">Email us</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
 
   </main>
 
