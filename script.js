@@ -119,18 +119,10 @@ function initContactForm() {
 // ── Nav scroll background ─────────────────────────────────────────────
 function initNavScroll() {
   const nav = document.querySelector('.nav');
-  const hero = document.querySelector('.hero--photo');
   if (!nav) return;
 
-  if (!hero) {
-    nav.classList.add('nav--scrolled');
-    return;
-  }
-
-  const threshold = hero.offsetHeight;
-
   const update = () => {
-    nav.classList.toggle('nav--scrolled', window.scrollY > threshold);
+    nav.classList.toggle('nav--scrolled', window.scrollY > 60);
   };
 
   window.addEventListener('scroll', update, { passive: true });
