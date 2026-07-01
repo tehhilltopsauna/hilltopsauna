@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initStatCounters();
   initScienceBenefits();
   initAboutStats();
+  initBringCards();
 });
 
 /* ---- Mobile navigation ---- */
@@ -315,4 +316,21 @@ function initAboutStats() {
   }, { threshold: 0.3 });
 
   allStats.forEach(s => observer.observe(s));
+}
+
+// ── What to bring cards ───────────────────────────────────────────────
+function initBringCards() {
+  const cards = document.querySelectorAll('.bring-card');
+  if (!cards.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('is-visible'), i * 120);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  cards.forEach(c => observer.observe(c));
 }

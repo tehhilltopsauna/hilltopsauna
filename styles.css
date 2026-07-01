@@ -1810,6 +1810,96 @@ p { color: var(--birch-dim); }
   color: var(--birch-dim);
 }
 
+/* ── What to bring ───────────────────────────────────────────────────── */
+.bring-section {
+  background: var(--ember);
+  padding: var(--space-6) 0;
+  overflow: hidden;
+}
+
+.bring-intro {
+  text-align: center;
+  margin-bottom: var(--space-5);
+}
+
+.bring-intro h2 {
+  color: #EDE5D8;
+  margin-bottom: var(--space-2);
+}
+
+.bring-intro p {
+  color: rgba(237,229,216,0.75);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.bring-intro .eyebrow {
+  color: #A8C8A0;
+  display: flex;
+  justify-content: center;
+}
+
+.bring-intro .eyebrow::before { background: #A8C8A0; }
+
+.bring-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
+  align-items: start;
+}
+
+.bring-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  padding: var(--space-3);
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.bring-card.is-visible { opacity: 1; transform: none !important; }
+
+.bring-card--tilt-left  { transform: translateY(40px) rotate(-1.5deg); }
+.bring-card--tilt-right { transform: translateY(40px) rotate(1.5deg); }
+
+.bring-card__icon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: var(--space-2);
+}
+
+.bring-card__icon svg { width: 100%; height: 100%; }
+
+.bring-card__num {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: rgba(237,229,216,0.4);
+  margin-bottom: 0.4rem;
+}
+
+.bring-card h3 {
+  color: #EDE5D8;
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.bring-card p {
+  color: rgba(237,229,216,0.7);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  max-width: none;
+}
+
+@media (max-width: 768px) {
+  .bring-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .bring-grid { grid-template-columns: 1fr; }
+  .bring-card--tilt-left, .bring-card--tilt-right { transform: translateY(40px); }
+}
+
 /* ── About page stats ─────────────────────────────────────────────────── */
 .about-stats {
   display: flex;
