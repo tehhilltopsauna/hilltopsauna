@@ -91,9 +91,26 @@ function initContactForm() {
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    if (successPanel) successPanel.classList.add('is-visible');
-    form.querySelector('button[type="submit"]').textContent = 'Message sent';
-    form.querySelector('button[type="submit"]').disabled = true;
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' },
+    })
+      .then((response) => {
+        if (response.ok) {
+          if (successPanel) successPanel.classList.add('is-visible');
+          submitBtn.textContent = 'Message sent';
+          submitBtn.disabled = true;
+          form.reset();
+        } else {
+          submitBtn.textContent = 'Something went wrong — try again';
+        }
+      })
+      .catch(() => {
+        submitBtn.textContent = 'Something went wrong — try again';
+      });
   });
 }
 
