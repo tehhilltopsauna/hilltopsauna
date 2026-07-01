@@ -1834,10 +1834,13 @@ p { color: var(--birch-dim); }
 .about-stat__number {
   font-family: var(--font-mono);
   font-size: 2.4rem;
-  color: var(--ember);
-  display: block;
+  color: var(--char);
+  display: inline-block;
   line-height: 1;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
+  background: var(--ember);
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius);
 }
 
 .about-stat__label {
