@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initGalleryCarousel();
   initStatCounters();
   initScienceBenefits();
+  initAboutStats();
 });
 
 /* ---- Mobile navigation ---- */
@@ -279,4 +280,39 @@ function initScienceBenefits() {
   }, { threshold: 0.2 });
 
   items.forEach(item => observer.observe(item));
+}
+
+// ── About page stat counters ───────────────────────────────────────────
+function initAboutStats() {
+  const stats = document.querySelectorAll('.about-stat[data-target]');
+  const allStats = document.querySelectorAll('.about-stat');
+  if (!allStats.length) return;
+
+  const animate = (el) => {
+    const target = parseInt(el.dataset.target);
+    const countEl = el.querySelector('.about-stat__count');
+    if (!countEl) return;
+    const duration = 1200;
+    const start = performance.now();
+    const tick = (now) => {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      countEl.textContent = Math.round(eased * target);
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        if (e.target.dataset.target) animate(e.target);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  allStats.forEach(s => observer.observe(s));
 }
