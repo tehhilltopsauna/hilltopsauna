@@ -1683,7 +1683,7 @@ p { color: var(--birch-dim); }
 
 .footer__grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
   gap: var(--space-3);
   padding-bottom: var(--space-3);
 }
