@@ -2290,7 +2290,7 @@ p { color: var(--birch-dim); }
 }
 
 .contact-quad__panel {
-  min-height: 650px;
+  min-height: 800px;
 }
 
 .contact-quad__photo {
