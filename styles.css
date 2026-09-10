@@ -2539,7 +2539,7 @@ p { color: var(--birch-dim); }
 
 .events-teaser__card img {
   width: 100%;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
   transition: transform 0.5s ease;
@@ -2550,10 +2550,10 @@ p { color: var(--birch-dim); }
 }
 
 .events-teaser__card-body {
-  padding: var(--space-3);
+  padding: var(--space-4);
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.6rem;
   flex: 1;
 }
 
