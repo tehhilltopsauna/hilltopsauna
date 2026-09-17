@@ -2620,6 +2620,7 @@ p { color: var(--birch-dim); }
   aspect-ratio: 4 / 3;
   width: 100%;
   object-fit: cover;
+  object-position: top;
   display: block;
   background: linear-gradient(160deg, var(--cedar) 0%, var(--moss) 100%);
 }
