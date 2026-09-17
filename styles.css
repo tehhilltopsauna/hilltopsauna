@@ -2582,3 +2582,190 @@ p { color: var(--birch-dim); }
 @media (max-width: 760px) {
   .events-teaser__grid { grid-template-columns: 1fr; }
 }
+
+/* ===================================================================
+   SHOP — product cards
+   =================================================================== */
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+  .shop-grid { grid-template-columns: 1fr; max-width: 460px; }
+}
+
+.product-card {
+  background: var(--char-2);
+  border: 1.5px solid var(--cedar-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--ember);
+}
+
+.product-card--featured { border-color: var(--ember); }
+
+.product-card__photo {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  background: linear-gradient(160deg, var(--cedar) 0%, var(--moss) 100%);
+}
+
+.product-card__photo-fallback {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(160deg, var(--cedar) 0%, var(--moss) 100%);
+  color: var(--birch);
+  text-align: center;
+  padding: var(--space-3);
+}
+
+.product-card__photo-fallback svg {
+  width: 48px;
+  height: 48px;
+  color: var(--ember);
+}
+
+.product-card__photo-fallback span {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--birch-dim);
+}
+
+.product-card__body {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  flex: 1;
+}
+
+.product-card__size {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ember);
+}
+
+.product-card__body h3 { margin: 0; }
+
+.product-card__body p {
+  font-size: 0.92rem;
+  color: var(--birch-dim);
+  line-height: 1.65;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.product-card__price {
+  font-family: var(--font-mono);
+  font-size: 1.7rem;
+  color: var(--birch);
+}
+
+.product-card__price span {
+  font-size: 0.85rem;
+  color: var(--birch-dim);
+  font-family: var(--font-body);
+}
+
+.product-card .btn { margin-top: 0.3rem; }
+
+/* Cacao ritual steps */
+.ritual-steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.ritual-step {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.ritual-step__num {
+  flex-shrink: 0;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: var(--ember);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.ritual-step__body strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--birch);
+  margin-bottom: 0.2rem;
+}
+
+.ritual-step__body p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--birch-dim);
+  line-height: 1.6;
+}
+
+/* Nutrition table */
+.nutrition-table {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.nutrition-table th, .nutrition-table td {
+  padding: 0.55rem 0.4rem;
+  border-bottom: 1px solid var(--cedar-light);
+  text-align: left;
+}
+
+.nutrition-table th {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ember);
+}
+
+.nutrition-table td:last-child, .nutrition-table th:last-child { text-align: right; }
+
+.shop-note {
+  max-width: 720px;
+  margin: var(--space-4) auto 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--birch-dim);
+}
