@@ -2617,11 +2617,11 @@ p { color: var(--birch-dim); }
 .product-card--featured { border-color: var(--ember); }
 
 .product-card__photo {
-  aspect-ratio: 8 / 7;
+  aspect-ratio: 10 / 7;
   width: 100%;
   object-fit: cover;
   display: block;
-  background: #F3ECDD;
+  background: #D8CFBE;
 }
 
 .product-card__photo-fallback {
