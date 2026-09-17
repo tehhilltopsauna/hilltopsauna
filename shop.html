@@ -37,6 +37,7 @@
         <a href="gallery.html">Gallery</a>
         <a href="events.html">Events</a>
         <a href="shop.html" aria-current="page">Shop</a>
+        <a href="cart.html" class="nav__cart-link">Cart<span class="nav__cart-count" data-cart-count>0</span></a>
         <a href="contact.html">Contact</a>
         <span class="nav__cta"><a href="booking.html" class="btn btn--primary">Book Now</a></span>
       </nav>
@@ -67,14 +68,12 @@
               <h3>Soulsource Ceremonial Cacao</h3>
               <p>100% Venezuelan ceremonial-grade cacao. Rich in magnesium, iron and antioxidants — a smooth, grounding way to slow down and set an intention.</p>
               <div class="product-card__price">£20 <span>/ 250g</span></div>
-              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" rel="noopener">
-                <input type="hidden" name="cmd" value="_xclick">
-                <input type="hidden" name="business" value="soulsource999@icloud.com">
-                <input type="hidden" name="item_name" value="Soulsource Ceremonial Cacao - 250g">
-                <input type="hidden" name="amount" value="20.00">
-                <input type="hidden" name="currency_code" value="GBP">
-                <button type="submit" class="btn btn--primary btn--block">Buy now — PayPal</button>
-              </form>
+              <div class="qty-stepper">
+                <button type="button" class="qty-stepper__btn" onclick="stepQty('qty-250g',-1)" aria-label="Decrease quantity">&#8722;</button>
+                <input type="number" id="qty-250g" class="qty-stepper__input" value="1" min="1" max="20" inputmode="numeric">
+                <button type="button" class="qty-stepper__btn" onclick="stepQty('qty-250g',1)" aria-label="Increase quantity">+</button>
+              </div>
+              <button type="button" class="btn btn--primary btn--block" onclick="addToCart('soulsource-250g','Soulsource Ceremonial Cacao','250g',20,'qty-250g',this)">Add to Cart</button>
             </div>
           </div>
 
@@ -86,19 +85,20 @@
               <h3>Soulsource Ceremonial Cacao</h3>
               <p>The same pure, single-origin cacao in our best-value size — for regular ritual use or sharing with the group after a sauna session.</p>
               <div class="product-card__price">£35 <span>/ 500g</span></div>
-              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" rel="noopener">
-                <input type="hidden" name="cmd" value="_xclick">
-                <input type="hidden" name="business" value="soulsource999@icloud.com">
-                <input type="hidden" name="item_name" value="Soulsource Ceremonial Cacao - 500g">
-                <input type="hidden" name="amount" value="35.00">
-                <input type="hidden" name="currency_code" value="GBP">
-                <button type="submit" class="btn btn--primary btn--block">Buy now — PayPal</button>
-              </form>
+              <div class="qty-stepper">
+                <button type="button" class="qty-stepper__btn" onclick="stepQty('qty-500g',-1)" aria-label="Decrease quantity">&#8722;</button>
+                <input type="number" id="qty-500g" class="qty-stepper__input" value="1" min="1" max="20" inputmode="numeric">
+                <button type="button" class="qty-stepper__btn" onclick="stepQty('qty-500g',1)" aria-label="Increase quantity">+</button>
+              </div>
+              <button type="button" class="btn btn--primary btn--block" onclick="addToCart('soulsource-500g','Soulsource Ceremonial Cacao','500g',35,'qty-500g',this)">Add to Cart</button>
             </div>
           </div>
 
         </div>
-        <p class="shop-note">Payment is handled securely via PayPal. Once we receive your order we'll be in touch to arrange collection from The Hilltop Sauna or local delivery.</p>
+        <div class="shop-cart-cta">
+          <a href="cart.html" class="btn btn--ghost">View Cart <span class="nav__cart-count" data-cart-count>0</span></a>
+        </div>
+        <p class="shop-note">Payment is handled securely via PayPal. Add items from either size to your cart, then head to checkout to pay for everything in one go. Once we receive your order we'll be in touch to arrange collection from The Hilltop Sauna or local delivery.</p>
       </div>
     </section>
 

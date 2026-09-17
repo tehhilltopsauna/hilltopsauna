@@ -2769,3 +2769,204 @@ p { color: var(--birch-dim); }
   font-size: 0.9rem;
   color: var(--birch-dim);
 }
+
+/* ===================================================================
+   CART — nav badge, quantity stepper, checkout page
+   =================================================================== */
+
+.nav__cart-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.nav__cart-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.3em;
+  height: 1.3em;
+  padding: 0 0.3em;
+  border-radius: 999px;
+  background: var(--ember);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.nav__cart-count.is-empty {
+  background: var(--cedar-light);
+  color: var(--birch-dim);
+}
+
+.shop-cart-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-3);
+}
+
+.qty-stepper {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--cedar-light);
+  border-radius: var(--radius);
+  overflow: hidden;
+  align-self: flex-start;
+}
+
+.qty-stepper__btn {
+  width: 2.4rem;
+  height: 2.4rem;
+  background: var(--char-2);
+  border: none;
+  font-size: 1.1rem;
+  color: var(--birch);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.qty-stepper__btn:hover { background: var(--cedar-light); }
+
+.qty-stepper__input {
+  width: 3.2rem;
+  height: 2.4rem;
+  border: none;
+  border-left: 1px solid var(--cedar-light);
+  border-right: 1px solid var(--cedar-light);
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  background: var(--char);
+  color: var(--birch);
+  -moz-appearance: textfield;
+}
+
+.qty-stepper__input::-webkit-outer-spin-button,
+.qty-stepper__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.qty-stepper--sm .qty-stepper__btn,
+.qty-stepper--sm .qty-stepper__input {
+  width: 2rem;
+  height: 2rem;
+  font-size: 0.9rem;
+}
+
+/* Cart page */
+.cart-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.cart-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--char-2);
+  border: 1px solid var(--cedar-light);
+  border-radius: var(--radius-lg);
+}
+
+.cart-row__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.cart-row__info strong {
+  color: var(--birch);
+  font-size: 1rem;
+}
+
+.cart-row__info span {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--birch-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.cart-row__price {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--birch);
+  min-width: 4.5rem;
+  text-align: right;
+}
+
+.cart-row__remove {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--birch-dim);
+  border-radius: 50%;
+  transition: background 0.2s, color 0.2s;
+}
+
+.cart-row__remove:hover {
+  background: rgba(58,48,40,0.08);
+  color: var(--ink);
+}
+
+.cart-row__remove svg { width: 16px; height: 16px; }
+
+.cart-empty {
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
+  padding: var(--space-5) var(--space-3);
+  color: var(--birch-dim);
+}
+
+.cart-summary {
+  max-width: 760px;
+  margin: var(--space-4) auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--cedar-light);
+}
+
+.cart-summary__total {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--birch);
+}
+
+.cart-summary__total span {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--birch-dim);
+  margin-right: 0.5rem;
+  font-family: var(--font-body);
+}
+
+@media (max-width: 640px) {
+  .cart-row {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "info remove"
+      "qty price";
+  }
+  .cart-row__info { grid-area: info; }
+  .cart-row__remove { grid-area: remove; justify-self: end; }
+  .qty-stepper { grid-area: qty; }
+  .cart-row__price { grid-area: price; text-align: right; }
+  .cart-summary { flex-direction: column; align-items: stretch; text-align: center; }
+}

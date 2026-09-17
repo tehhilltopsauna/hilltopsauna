@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart — The Hilltop Sauna</title>
+  <meta name="description" content="Review your Soulsource Ceremonial Cacao order and check out securely via PayPal.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Schibsted+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="website photos/logo-transparent.png" alt="The Hilltop Sauna" class="nav__logo-img">The Hilltop Sauna
+      </a>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="nav__links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">The Science</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="events.html">Events</a>
+        <a href="shop.html">Shop</a>
+        <a href="cart.html" class="nav__cart-link" aria-current="page">Cart<span class="nav__cart-count" data-cart-count>0</span></a>
+        <a href="contact.html">Contact</a>
+        <span class="nav__cta"><a href="booking.html" class="btn btn--primary">Book Now</a></span>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ PAGE HERO ============ -->
+    <section class="page-hero" style="text-align:center;">
+      <div class="container">
+        <span class="eyebrow eyebrow--ember" style="display:flex;justify-content:center;">Soulsource Ceremonial Cacao</span>
+        <h1 class="page-hero__title">Your Cart</h1>
+        <p style="margin-left:auto;margin-right:auto;">Review your order below, then check out securely via PayPal.</p>
+      </div>
+    </section>
+
+    <!-- ============ CART ============ -->
+    <section class="section section--char" style="padding-top:0;">
+      <div class="container">
+
+        <div class="cart-empty" data-cart-empty>
+          <p>Your cart is empty.</p>
+          <a href="shop.html" class="btn btn--primary" style="margin-top: var(--space-2); display:inline-flex;">Browse the shop</a>
+        </div>
+
+        <div class="cart-list" data-cart-list></div>
+
+        <div class="cart-summary" data-cart-summary style="display:none;">
+          <div class="cart-summary__total"><span>Total</span><span data-cart-total>£0.00</span></div>
+          <button type="button" class="btn btn--primary" data-cart-checkout>Checkout with PayPal</button>
+        </div>
+
+        <p class="shop-note">Payment is handled securely via PayPal. Once we receive your order we'll be in touch to arrange collection from The Hilltop Sauna or local delivery. <a href="shop.html">Continue shopping</a>.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="ridge-divider">
+        <svg viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="footerRidge" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#425A3A"/>
+              <stop offset="1" stop-color="#5F7D55"/>
+            </linearGradient>
+          </defs>
+          <path d="M0,30 C150,10 300,35 450,20 C600,5 750,30 900,15 C1050,5 1150,25 1200,18" fill="none" stroke="url(#footerRidge)" stroke-width="2" opacity="0.6"/>
+        </svg>
+      </div>
+
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">
+            <img src="website photos/logo-transparent.png" alt="" class="nav__logo-img" aria-hidden="true">
+            The Hilltop Sauna
+          </div>
+        </div>
+
+        <div>
+          <h4>Explore</h4>
+          <div class="footer__links">
+            <a href="about.html">About Us</a>
+            <a href="services.html">The Science</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="events.html">Events</a>
+            <a href="shop.html">Shop</a>
+            <a href="booking.html">Booking</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Contact us</h4>
+          <div class="footer__links">
+            <a href="https://wa.me/447923158869">Message us on WhatsApp</a>
+            <a href="contact.html#message">Send us an email</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Reviews</h4>
+          <div class="footer__links">
+            <span class="rating-badge"><strong>★ 5.0</strong> · 27 reviews</span>
+            <a href="booking.html">Book a session</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© 2026 The Hilltop Sauna. All rights reserved.</span>
+        <span><a href="contact.html">Contact</a> · <a href="booking.html">Book a session</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

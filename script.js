@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initScienceBenefits();
   initAboutStats();
   initBringCards();
+  updateCartBadge();
+  initCartPage();
 });
 
 /* ---- Mobile navigation ---- */
@@ -308,6 +310,181 @@ function initAboutStats() {
   }, { threshold: 0.3 });
 
   allStats.forEach(s => observer.observe(s));
+}
+
+// ── Shop cart ──────────────────────────────────────────────────────────
+const CART_KEY = 'hilltop_cart';
+const CART_PAYPAL_EMAIL = 'soulsource999@icloud.com';
+
+function getCart() {
+  try {
+    return JSON.parse(localStorage.getItem(CART_KEY)) || [];
+  } catch (e) {
+    return [];
+  }
+}
+
+function saveCart(cart) {
+  localStorage.setItem(CART_KEY, JSON.stringify(cart));
+  updateCartBadge();
+  renderCart();
+}
+
+function cartCount() {
+  return getCart().reduce((sum, item) => sum + item.qty, 0);
+}
+
+function cartTotal() {
+  return getCart().reduce((sum, item) => sum + item.qty * item.price, 0);
+}
+
+function formatGBP(amount) {
+  return '£' + amount.toFixed(2);
+}
+
+function updateCartBadge() {
+  const count = cartCount();
+  document.querySelectorAll('[data-cart-count]').forEach((el) => {
+    el.textContent = count;
+    el.classList.toggle('is-empty', count === 0);
+  });
+}
+
+function stepQty(inputId, delta) {
+  const input = document.getElementById(inputId);
+  if (!input) return;
+  const min = parseInt(input.min, 10) || 1;
+  const max = parseInt(input.max, 10) || 99;
+  const next = Math.min(max, Math.max(min, (parseInt(input.value, 10) || 1) + delta));
+  input.value = next;
+}
+
+function addToCart(id, name, size, price, qtyInputId, buttonEl) {
+  const input = document.getElementById(qtyInputId);
+  const qty = Math.max(1, parseInt(input ? input.value : 1, 10) || 1);
+
+  const cart = getCart();
+  const existing = cart.find((item) => item.id === id);
+  if (existing) {
+    existing.qty += qty;
+  } else {
+    cart.push({ id, name, size, price, qty });
+  }
+  saveCart(cart);
+
+  if (buttonEl) {
+    const original = buttonEl.textContent;
+    buttonEl.textContent = 'Added ✓';
+    buttonEl.disabled = true;
+    setTimeout(() => {
+      buttonEl.textContent = original;
+      buttonEl.disabled = false;
+    }, 1200);
+  }
+}
+
+function updateCartItemQty(id, qty) {
+  const cart = getCart();
+  const item = cart.find((i) => i.id === id);
+  if (!item) return;
+  qty = Math.max(1, parseInt(qty, 10) || 1);
+  item.qty = qty;
+  saveCart(cart);
+}
+
+function removeCartItem(id) {
+  saveCart(getCart().filter((item) => item.id !== id));
+}
+
+function renderCart() {
+  const list = document.querySelector('[data-cart-list]');
+  if (!list) return;
+
+  const cart = getCart();
+  const emptyState = document.querySelector('[data-cart-empty]');
+  const summary = document.querySelector('[data-cart-summary]');
+
+  if (!cart.length) {
+    list.innerHTML = '';
+    if (emptyState) emptyState.style.display = 'block';
+    if (summary) summary.style.display = 'none';
+    return;
+  }
+
+  if (emptyState) emptyState.style.display = 'none';
+  if (summary) summary.style.display = 'flex';
+
+  list.innerHTML = cart.map((item) => `
+    <div class="cart-row" data-cart-row="${item.id}">
+      <div class="cart-row__info">
+        <strong>${item.name}</strong>
+        <span>${item.size}</span>
+      </div>
+      <div class="qty-stepper qty-stepper--sm">
+        <button type="button" class="qty-stepper__btn" onclick="cartRowStep('${item.id}',-1)" aria-label="Decrease quantity">&#8722;</button>
+        <input type="number" class="qty-stepper__input" min="1" max="20" value="${item.qty}" inputmode="numeric" onchange="updateCartItemQty('${item.id}', this.value)">
+        <button type="button" class="qty-stepper__btn" onclick="cartRowStep('${item.id}',1)" aria-label="Increase quantity">+</button>
+      </div>
+      <div class="cart-row__price">${formatGBP(item.price * item.qty)}</div>
+      <button type="button" class="cart-row__remove" onclick="removeCartItem('${item.id}')" aria-label="Remove ${item.name} ${item.size}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  `).join('');
+
+  const totalEl = document.querySelector('[data-cart-total]');
+  if (totalEl) totalEl.textContent = formatGBP(cartTotal());
+}
+
+function cartRowStep(id, delta) {
+  const cart = getCart();
+  const item = cart.find((i) => i.id === id);
+  if (!item) return;
+  item.qty = Math.max(1, Math.min(20, item.qty + delta));
+  saveCart(cart);
+}
+
+function checkoutWithPaypal() {
+  const cart = getCart();
+  if (!cart.length) return;
+
+  const form = document.createElement('form');
+  form.action = 'https://www.paypal.com/cgi-bin/webscr';
+  form.method = 'post';
+  form.target = '_blank';
+
+  const fields = {
+    cmd: '_cart',
+    upload: '1',
+    business: CART_PAYPAL_EMAIL,
+    currency_code: 'GBP',
+  };
+
+  cart.forEach((item, i) => {
+    const n = i + 1;
+    fields[`item_name_${n}`] = `${item.name} - ${item.size}`;
+    fields[`amount_${n}`] = item.price.toFixed(2);
+    fields[`quantity_${n}`] = item.qty;
+  });
+
+  Object.entries(fields).forEach(([name, value]) => {
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = name;
+    input.value = value;
+    form.appendChild(input);
+  });
+
+  document.body.appendChild(form);
+  form.submit();
+  form.remove();
+}
+
+function initCartPage() {
+  if (!document.querySelector('[data-cart-list]')) return;
+  renderCart();
+  const checkoutBtn = document.querySelector('[data-cart-checkout]');
+  if (checkoutBtn) checkoutBtn.addEventListener('click', checkoutWithPaypal);
 }
 
 // ── What to bring cards ───────────────────────────────────────────────
